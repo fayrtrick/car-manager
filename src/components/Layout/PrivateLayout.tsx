@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Sidebar from "./components/Layout/Sidebar";
-import { TopBar } from "./components/Layout/TopBar";
+import { TopBar } from "./TopBar";
+import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
-function App() {
+export function PrivateLayout() {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -11,13 +12,10 @@ function App() {
       <div className="drawer-content flex flex-col">
         <TopBar />
         <div className="px-10 lg:px-14 py-8">
-          <p>Contenu de la page</p>
-          {/*<Outlet />*/}
+          <Outlet />
         </div>
       </div>
       <Sidebar open={open} setOpen={setOpen} />
     </div>
   );
 }
-
-export default App;

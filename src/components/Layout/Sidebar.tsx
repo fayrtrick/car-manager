@@ -1,4 +1,5 @@
 import { GrClose } from "react-icons/gr";
+import { NavLink } from "react-router-dom";
 
 interface SidebarProps {
   open: boolean;
@@ -9,6 +10,11 @@ const liensNavigation = [
   {
     name: "Accueil",
     url: "/",
+    icon: <></>
+  },
+  {
+    name: "Test",
+    url: "/test",
     icon: <></>
   },
 ];
@@ -31,12 +37,12 @@ const Sidebar = ({}: SidebarProps) => {
           <p className="font-medium">John Doe</p>
         </div>
 
-        <ul className="menu p-4 w-80 h-full text-base-content">
+        <ul className="menu px-4 py-6 w-80 h-full text-base-content font-medium flex flex-col gap-1">
           {liensNavigation.map(({ name, url, icon }) => (
             <li>
-              <a href={url}>
+              <NavLink to={url}>
                 {icon} {name}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
