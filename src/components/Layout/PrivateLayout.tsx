@@ -11,7 +11,7 @@ export function PrivateLayout() {
       <input id="sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         <TopBar />
-        <div className="px-10 lg:px-14 py-8">
+        <div className="p-6 lg:px-12 lg:py-8">
           <Outlet />
         </div>
       </div>
