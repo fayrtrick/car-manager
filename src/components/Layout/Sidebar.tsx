@@ -1,26 +1,28 @@
 import { GrClose } from "react-icons/gr";
-import { NavLink } from "react-router-dom";
 import { Avatar } from "./Avatar";
-import { ReactNode } from "react";
-import { HiHome } from "react-icons/hi2";
+import { HiCog8Tooth, HiHome, HiOutlineRocketLaunch } from "react-icons/hi2";
 import { AiFillCar } from "react-icons/ai";
-
-type NavigationLink = {
-  name: string;
-  url: string;
-  icon: ReactNode;
-};
+import { NavigationLink, SidebarLink } from "./SidebarLink";
 
 const navigationLinks: NavigationLink[] = [
   {
     name: "Accueil",
-    url: "/",
-    icon: <HiHome />
+    url: "/accueil",
+    icon: <HiHome size={24} />
   },
   {
     name: "Véhicules",
     url: "/vehicles",
-    icon: <AiFillCar />
+    icon: <AiFillCar size={24} />,
+    children: [
+      { name: "Test 1", url: "/vehicles/tset", icon: <HiOutlineRocketLaunch /> },
+      { name: "Test 2", url: "/vehicles/test", icon: <HiOutlineRocketLaunch /> },
+    ]
+  },
+  {
+    name: "Paramètres",
+    url: "/settings",
+    icon: <HiCog8Tooth size={24} />
   },
 ];
 
@@ -43,13 +45,9 @@ const Sidebar = () => {
           <Avatar user={user} />
         </div>
 
-        <ul className="menu px-4 py-6 w-80 h-full text-base-content font-medium flex flex-col gap-1">
-          {navigationLinks.map(({ name, url, icon }) => (
-            <li>
-              <NavLink to={url}>
-                {icon} {name}
-              </NavLink>
-            </li>
+        <ul className="px-4 py-6 w-80 h-full text-base-content font-medium flex flex-col gap-1">
+          {navigationLinks.map((link, index) => (
+            <SidebarLink key={index} {...link} />
           ))}
         </ul>
       </div>
