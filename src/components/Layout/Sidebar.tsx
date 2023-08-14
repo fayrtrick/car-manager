@@ -1,25 +1,32 @@
 import { GrClose } from "react-icons/gr";
 import { NavLink } from "react-router-dom";
+import { Avatar } from "./Avatar";
+import { ReactNode } from "react";
+import { HiHome } from "react-icons/hi2";
+import { AiFillCar } from "react-icons/ai";
 
-interface SidebarProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
+type NavigationLink = {
+  name: string;
+  url: string;
+  icon: ReactNode;
+};
 
-const liensNavigation = [
+const navigationLinks: NavigationLink[] = [
   {
     name: "Accueil",
     url: "/",
-    icon: <></>
+    icon: <HiHome />
   },
   {
-    name: "Test",
-    url: "/test",
-    icon: <></>
+    name: "Véhicules",
+    url: "/vehicles",
+    icon: <AiFillCar />
   },
 ];
 
-const Sidebar = ({}: SidebarProps) => {
+const Sidebar = () => {
+  const user = { firstName: "John", lastName: "Doe" };
+
   return (
     <div className="drawer-side shadow-md">
       <label htmlFor="sidebar" className="lg:!invisible drawer-overlay"></label>
@@ -32,14 +39,12 @@ const Sidebar = ({}: SidebarProps) => {
           </label>
         </div>
 
-        <div className="flex flex-col items-center px-4 py-6 gap-2 border-b">
-          {/* Avatar */}
-          <div className="font-bold text-xl bg-base-100 w-14 h-14 rounded-full flex justify-center items-center border border-slate-300">JD</div>
-          <p className="font-medium">John Doe</p>
+        <div className="px-4 py-6 border-b">
+          <Avatar user={user} />
         </div>
 
         <ul className="menu px-4 py-6 w-80 h-full text-base-content font-medium flex flex-col gap-1">
-          {liensNavigation.map(({ name, url, icon }) => (
+          {navigationLinks.map(({ name, url, icon }) => (
             <li>
               <NavLink to={url}>
                 {icon} {name}

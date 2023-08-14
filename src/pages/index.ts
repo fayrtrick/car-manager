@@ -1,3 +1,4 @@
 import { lazy } from "react";
 
-export const Accueil = lazy(() => import('./Accueil'));
+export const Home = lazy(() => import('./Home'));
+export const Vehicles = lazy(() => import('./Vehicles'));
