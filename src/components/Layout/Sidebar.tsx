@@ -33,7 +33,8 @@ const Sidebar = ({}: SidebarProps) => {
         </div>
 
         <div className="flex flex-col items-center px-4 py-6 gap-2 border-b">
-          <div className="font-bold text-xl bg-base-100 w-14 h-14 rounded-full flex justify-center items-center">JD</div>
+          {/* Avatar */}
+          <div className="font-bold text-xl bg-base-100 w-14 h-14 rounded-full flex justify-center items-center border border-slate-300">JD</div>
           <p className="font-medium">John Doe</p>
         </div>
 
