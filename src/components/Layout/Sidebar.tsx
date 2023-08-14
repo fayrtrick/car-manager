@@ -1,26 +1,43 @@
-import React from "react";
+import { GrClose } from "react-icons/gr";
 
 interface SidebarProps {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
 
-const Sidebar = ({ open, setOpen }: SidebarProps) => {
+const liensNavigation = [
+  {
+    name: "Accueil",
+    url: "/",
+    icon: <></>
+  },
+];
+
+const Sidebar = ({}: SidebarProps) => {
   return (
     <div className="drawer-side">
       <label htmlFor="sidebar" className="lg:!invisible drawer-overlay"></label>
 
-      <div className="bg-white shadow-xl  p-5 pt-8 flex flex-col font-bold relative duration-300"></div>
+      {/* Contenu */}
+      <div className="flex flex-col h-full w-80 bg-white">
 
-      <ul className="menu p-4 w-80 h-full bg-white text-base-content">
-        {/* Sidebar content here */}
-        <li>
-          <a>Sidebar Item 1</a>
-        </li>
-        <li>
-          <a>Sidebar Item 2</a>
-        </li>
-      </ul>
+        <div className="lg:hidden flex justify-end p-3">
+          <label htmlFor="sidebar" className="p-1.5 cursor-pointer">
+            <GrClose className="!stroke-gray-100" />
+          </label>
+        </div>
+
+        <ul className="menu p-4 w-80 h-full text-base-content">
+          {liensNavigation.map(({ name, url, icon }) => (
+            <li>
+              <a href={url}>
+                {icon} {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
     </div>
   );
 };
