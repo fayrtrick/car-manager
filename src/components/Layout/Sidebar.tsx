@@ -1,9 +1,9 @@
 import { GrClose } from "react-icons/gr";
-import { NavLink } from "react-router-dom";
 import { Avatar } from "./Avatar";
 import { HiHome } from "react-icons/hi2";
 import { IconType } from "react-icons";
 import { AiFillCar } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 
 type NavigationLink = {
   name: string;

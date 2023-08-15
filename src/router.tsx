@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { PrivateLayout } from "./components/Layout/PrivateLayout";
-import { Home, Vehicles } from "./pages";
+import { Home, VehiclesTest1, VehiclesTest2 } from "./pages";
 
 export const router = createBrowserRouter([
   {
@@ -8,12 +8,21 @@ export const router = createBrowserRouter([
     element: <PrivateLayout />,
     children: [
       {
-        path: "/",
+        path: "/accueil",
         element: <Home />,
       },
       {
         path: "/vehicles",
-        element: <Vehicles />,
+        children: [
+          {
+            path: "/vehicles/tset",
+            element: <VehiclesTest1 />,
+          },
+          {
+            path: "/vehicles/test",
+            element: <VehiclesTest2 />,
+          },
+        ]
       },
     ]
   },

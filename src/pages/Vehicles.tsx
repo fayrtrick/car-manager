@@ -1,4 +1,4 @@
-export default function Accueil() {
+export default function Vehicles() {
   return (
     <p>Liste des véhicules</p>
   );
