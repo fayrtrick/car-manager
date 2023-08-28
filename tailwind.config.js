@@ -6,6 +6,7 @@ export default {
     themes: [
       {
         mytheme: {
+          "base-content": "#374151",
           primary: "#F9703E",
           "primary-content": "#ffffff",
           secondary: "#FFD0B5",
