@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
     element: <PrivateLayout />,
     children: [
       {
-        path: "/accueil",
+        path: "/",
         element: <Home />,
       },
       {

@@ -9,7 +9,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb = (props: BreadcrumbProps) => {
   return (
-    <div className="text-sm breadcrumbs">
+    <div className="text-sm breadcrumbs !pb-0">
       <ul>
         {props.items.map(({ name, href }, index) => (
           <li

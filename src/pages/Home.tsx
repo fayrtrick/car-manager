@@ -1,5 +1,3 @@
 export default function Home() {
-  return (
-    <p>Page d'accueil</p>
-  );
+  return <p className="text-black">Page d'accueil</p>;
 }

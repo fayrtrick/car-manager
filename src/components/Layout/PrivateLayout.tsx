@@ -11,7 +11,7 @@ export function PrivateLayout() {
       <div className="drawer-content flex flex-col">
         <TopBar />
         <div className="p-6 lg:px-12 lg:py-8">
-          <Suspense fallback={<div className="w-full flex justify-center"><Loader /></div>}>
+          <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
         </div>
