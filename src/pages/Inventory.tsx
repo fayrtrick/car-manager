@@ -1,4 +1,4 @@
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import InventoryTable from "@/components/Table/InventoryTable";
 import { InventoryEntity } from "@/types/entities/inventory.entity";
 
@@ -26,9 +26,9 @@ const examples: InventoryEntity[] = [
 const Inventory = () => {
   return (
     <>
-      <Breadcrumb
-        items={[
-          { name: "Gestion", href: "" },
+      <Breadcrumbs
+        breadcrumbs={[
+          { name: "Gestion" },
           { name: "Inventaire", href: "/inventory" },
         ]}
       />
