@@ -55,7 +55,7 @@ const InventoryTable = ({ items }: InventoryTableProps) => {
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-gray-100 font-normal">
             {items.map((item) => (
               <tr className="bg-white">
                 <td className={cellStyle}>{item.id}</td>
@@ -78,7 +78,7 @@ const InventoryTable = ({ items }: InventoryTableProps) => {
         </table>
       </div>
 
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
         {items.map((item) => (
           <div className="bg-white space-y-3 p-4 rounded-lg shadow">
             <div className="flex items-center space-x-2 text-sm">
@@ -105,7 +105,7 @@ const InventoryTable = ({ items }: InventoryTableProps) => {
             </div>
           </div>
         ))}
-      </div> */}
+      </div>
     </>
   );
 };

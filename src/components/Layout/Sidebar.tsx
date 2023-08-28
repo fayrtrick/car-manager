@@ -44,7 +44,7 @@ const MenuItem = ({ navigationLinks }: MenuItemProps) => {
           to={url || ""}
           className={`${
             isActive && "!bg-primary-300 !text-gray-700"
-          } active:!bg-red-200`}
+          } active:!bg-red-200 font-normal`}
         >
           {<Icon />} {name}
         </NavLink>
