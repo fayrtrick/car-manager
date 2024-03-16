@@ -14,7 +14,11 @@ const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => {
     <div className="text-sm breadcrumbs">
       <ul>
         {breadcrumbs.map((breadcrumb, index) => (
-          <Breadcrumb key={index} {...breadcrumb} last={index === breadcrumbs.length - 1} />
+          <Breadcrumb
+            key={index}
+            {...breadcrumb}
+            last={index === breadcrumbs.length - 1}
+          />
         ))}
       </ul>
     </div>
