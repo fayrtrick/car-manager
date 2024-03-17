@@ -9,5 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag fayrtrick/carmanager:${{ github.sha }}
+      run: docker build . --file Dockerfile --tag fayrtrick/carmanager:$(echo ${GITHUB_SHA::7})
+
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Push image to Docker Hub
+      run: docker push fayrtrick/carmanager:$(echo ${GITHUB_SHA::7})
